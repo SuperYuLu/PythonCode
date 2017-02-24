@@ -1,0 +1,48 @@
+starting build for URL: https://github.com/superyulu/pythoncode-research
+fetching source at https://github.com/superyulu/pythoncode-research
+Step 1 : FROM andrewosh/binder-base:latest
+ ---> 10c75734a0d4
+Step 2 : RUN mkdir /home/main/notebooks
+ ---> Running in 51bdd1b40944
+ ---> e2fa2e22749c
+Step 3 : RUN chown main:main /home/main/notebooks
+Removing intermediate container 51bdd1b40944
+ ---> Running in e8b0311ceb65
+ ---> 0412195ee6ac
+Removing intermediate container e8b0311ceb65
+Step 4 : WORKDIR /home/main/notebooks
+ ---> Running in 14fb3a35907b
+ ---> 1992cd7e4bd5
+Removing intermediate container 14fb3a35907b
+Step 5 : USER root
+ ---> Running in 0acd9d580827
+ ---> a631b0a6892e
+Step 6 : COPY . /home/main/notebooks/
+Removing intermediate container 0acd9d580827
+ ---> 2b7043021620
+Step 7 : RUN chown -R main:main $HOME/notebooks
+Removing intermediate container cc9a7cfb7419
+ ---> Running in 34a71b0de224
+ ---> 31da0d83157c
+Removing intermediate container 34a71b0de224
+Step 8 : USER main
+ ---> Running in ec38c71e4a77
+ ---> 7a5b8807b7c8
+Removing intermediate container ec38c71e4a77
+Step 9 : RUN find $HOME/notebooks -name '*.ipynb' -exec jupyter trust {} \;
+ ---> Running in 2bbcba2744ec
+[91m[TrustNotebookApp] Writing notebook-signing key to /home/main/.local/share/jupyter/notebook_secret[0m
+Signing notebook: /home/main/notebooks/JupyterNotebook/MOPCooling.ipynb
+Signing notebook: /home/main/notebooks/JupyterNotebook/MOPCoolingFieldCalcu2.ipynb
+ ---> df7d53ddd09e
+Step 10 : USER main
+Removing intermediate container 2bbcba2744ec
+ ---> Running in 6f82ba940014
+ ---> 31a825126051
+Step 11 : WORKDIR $HOME/notebooks
+Removing intermediate container 6f82ba940014
+ ---> Running in 84d238536f70
+ ---> ac745d3bd972
+Removing intermediate container 84d238536f70
+Successfully built ac745d3bd972
+registering template for superyulu-pythoncode-research
